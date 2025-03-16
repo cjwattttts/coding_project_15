@@ -22,6 +22,14 @@ function addRiskItem(riskName, riskLevel, department) { // function to add risk 
     departmentElement.textContent = "Department: " + department; 
     riskCard.appendChild(departmentElement);
 
+    if (riskLevel === "Low") { // applies green background for low risk
+        riskCard.style.backgroundColor = "green"; 
+    } else if (riskLevel === "Medium") { // applies yellow background for medium risk
+        riskCard.style.backgroundColor = "yellow"; 
+    } else if (riskLevel === "High") { // applies red background for high risk
+        riskCard.style.backgroundColor = "red"; 
+    }
+
     let resolveButton = document.createElement("button"); // creates the resolve button
     resolveButton.textContent = "Resolve"; 
     resolveButton.onclick = function () {
@@ -41,3 +49,8 @@ addRiskItem("Supply Chain Disruption", "Medium", "Operations");
 
 addRiskItem("Market Fluctuations", "High", "Finance");
 // Clicking "Resolve" should remove this risk from the dashboard.
+
+// Test Case TASK 4
+
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");

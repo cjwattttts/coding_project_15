@@ -61,8 +61,7 @@ addRiskItem("HR Compliance Issue", "Low", "Human Resources");
 
 //TASK 5
 
-let increaseRiskBtn = document.createElement("button"); // creates the button to increase risk levels
-increaseRiskBtn.textContent = "Increase Risk Levels"; 
+let increaseRiskBtn = document.getElementById("increaseRiskBtn"); // selects the existing button from HTML
 increaseRiskBtn.onclick = function () {
     let riskCards = document.querySelectorAll(".riskCard"); // selects all risk cards
     riskCards.forEach(function (card) { 
@@ -76,7 +75,6 @@ increaseRiskBtn.onclick = function () {
         }
     });
 };
-document.body.appendChild(increaseRiskBtn); // appends the increase risk button to the body
 
 // Test Case TASK 5
 

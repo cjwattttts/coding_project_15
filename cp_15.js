@@ -4,7 +4,7 @@ let riskDashboard = document.getElementById("riskDashboard"); // selects the ris
 
 console.log("Risk Dashboard Loaded");
 
-//TASK 2
+//TASK 2, 3, 4, 6
 
 function addRiskItem(riskName, riskLevel, department) { // function to add risk items to the dashboard
     let riskCard = document.createElement("div"); // creates a new div for the risk card
@@ -36,6 +36,10 @@ function addRiskItem(riskName, riskLevel, department) { // function to add risk 
         riskDashboard.removeChild(riskCard); // removes the risk card when clicked
     };
     riskCard.appendChild(resolveButton); // appends the resolve button to the card
+
+    riskCard.onclick = function (event) { // stops event propagation for the card click
+        event.stopPropagation(); // stops the event from bubbling up
+    };
 
     riskDashboard.appendChild(riskCard); // appends the risk card to the dashboard 
 }
@@ -74,6 +78,6 @@ increaseRiskBtn.onclick = function () {
 };
 document.body.appendChild(increaseRiskBtn); // appends the increase risk button to the body
 
-// Test Case
+// Test Case TASK 5
 
 addRiskItem("Employee Retention", "Low", "HR"); // adds a low risk card for Employee Retention

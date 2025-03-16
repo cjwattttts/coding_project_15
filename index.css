@@ -1,0 +1,31 @@
+#riskDashboard { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    padding: 10px; 
+}
+
+.riskCard { 
+    border: 1px solid black; 
+    padding: 10px; 
+    margin: 10px; 
+    width: 250px; 
+}
+
+.riskCard[data-level="Low"] { background-color: lightgreen; }
+.riskCard[data-level="Medium"] { background-color: yellow; }
+.riskCard[data-level="High"] { background-color: lightcoral; }
+
+.riskCard button { 
+    margin-top: 10px; 
+    padding: 5px; 
+    border: none; 
+    background-color: black; 
+    color: white; 
+    cursor: pointer; 
+}
+
+input, button { 
+    margin: 5px; 
+    padding: 5px; 
+}

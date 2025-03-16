@@ -54,3 +54,26 @@ addRiskItem("Market Fluctuations", "High", "Finance");
 
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+
+//TASK 5
+
+let increaseRiskBtn = document.createElement("button"); // creates the button to increase risk levels
+increaseRiskBtn.textContent = "Increase Risk Levels"; 
+increaseRiskBtn.onclick = function () {
+    let riskCards = document.querySelectorAll(".riskCard"); // selects all risk cards
+    riskCards.forEach(function (card) { 
+        let levelElement = card.querySelector("p"); // selects the risk level element
+        if (levelElement.textContent.includes("Low")) { // changes Low to Medium
+            levelElement.textContent = "Risk Level: Medium"; 
+            card.style.backgroundColor = "yellow"; // updates color to yellow
+        } else if (levelElement.textContent.includes("Medium")) { // changes medium to high
+            levelElement.textContent = "Risk Level: High"; 
+            card.style.backgroundColor = "red"; // updates color to red
+        }
+    });
+};
+document.body.appendChild(increaseRiskBtn); // appends the increase risk button to the body
+
+// Test Case
+
+addRiskItem("Employee Retention", "Low", "HR"); // adds a low risk card for Employee Retention

@@ -9,6 +9,15 @@
             border: 1px solid black; 
             padding: 10px; 
             margin: 10px; 
+            width: 250px;
+        }
+        #riskDashboard { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px;
+        }
+        #controls { 
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -17,10 +26,17 @@
     <h1>Risk Management Dashboard</h1>
     
     <!-- form to add new risk items -->
-    <input type="text" id="riskName" placeholder="Risk Name">
-    <input type="text" id="riskLevel" placeholder="Risk Level (Low, Medium, High)">
-    <input type="text" id="department" placeholder="Department">
-    <button id="addRiskBtn">Add Risk</button>
+    <div id="controls">
+        <input type="text" id="riskName" placeholder="Risk Name">
+        <select id="riskLevel">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <input type="text" id="department" placeholder="Department">
+        <button id="addRiskBtn">Add Risk</button>
+        <button id="increaseRiskBtn">Increase Risk Levels</button>
+    </div>
 
     <!-- dashboard container -->
     <div id="riskDashboard"></div>

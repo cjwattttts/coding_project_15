@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+    <style>
+        .riskCard { 
+            border: 1px solid black; 
+            padding: 10px; 
+            margin: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Risk Management Dashboard</h1>
+    
+    <!-- form to add new risk items -->
+    <input type="text" id="riskName" placeholder="Risk Name">
+    <input type="text" id="riskLevel" placeholder="Risk Level (Low, Medium, High)">
+    <input type="text" id="department" placeholder="Department">
+    <button id="addRiskBtn">Add Risk</button>
+
+    <!-- dashboard container -->
+    <div id="riskDashboard"></div>
+
+    <script src="cp_15.js"></script>
+
+</body>
+</html>

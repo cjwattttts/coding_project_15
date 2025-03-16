@@ -61,20 +61,35 @@ addRiskItem("HR Compliance Issue", "Low", "Human Resources");
 
 //TASK 5
 
-let increaseRiskBtn = document.getElementById("increaseRiskBtn"); // selects the existing button from HTML
-increaseRiskBtn.onclick = function () {
-    let riskCards = document.querySelectorAll(".riskCard"); // selects all risk cards
-    riskCards.forEach(function (card) { 
-        let levelElement = card.querySelector("p"); // selects the risk level element
-        if (levelElement.textContent.includes("Low")) { // changes Low to Medium
-            levelElement.textContent = "Risk Level: Medium"; 
-            card.style.backgroundColor = "yellow"; // updates color to yellow
-        } else if (levelElement.textContent.includes("Medium")) { // changes medium to high
-            levelElement.textContent = "Risk Level: High"; 
-            card.style.backgroundColor = "red"; // updates color to red
+document.addEventListener("DOMContentLoaded", function() {
+    let addRiskBtn = document.getElementById("addRiskBtn"); // gets the add risk button
+    addRiskBtn.onclick = function() {
+        let riskName = document.getElementById("riskName").value; // gets the risk name from input
+        let riskLevel = document.getElementById("riskLevel").value; // gets the risk level from dropdown
+        let department = document.getElementById("department").value; // gets the department from input
+
+        if (riskName && riskLevel && department) {
+            addRiskItem(riskName, riskLevel, department); // adds the new risk item to the dashboard
+        } else {
+            alert("Please fill in all fields."); // displays an alert if any field is empty
         }
-    });
-};
+    };
+
+    let increaseRiskBtn = document.getElementById("increaseRiskBtn"); // selects the existing button from HTML
+    increaseRiskBtn.onclick = function () {
+        let riskCards = document.querySelectorAll(".riskCard"); // selects all risk cards
+        riskCards.forEach(function (card) { 
+            let levelElement = card.querySelector("p"); // selects the risk level element
+            if (levelElement.textContent.includes("Low")) { // changes Low to Medium
+                levelElement.textContent = "Risk Level: Medium"; 
+                card.style.backgroundColor = "yellow"; // updates color to yellow
+            } else if (levelElement.textContent.includes("Medium")) { // changes medium to high
+                levelElement.textContent = "Risk Level: High"; 
+                card.style.backgroundColor = "red"; // updates color to red
+            }
+        });
+    };
+});
 
 // Test Case TASK 5
 
